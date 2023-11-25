@@ -19,7 +19,7 @@ public class UsuarioHasPasatiempo {
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false, insertable = false, updatable = false)
-	private Usuario Usuario;
+	private Usuario usuario;
 
 	@ManyToOne
 	@JoinColumn(name = "idPasatiempo", nullable = false, insertable = false, updatable = false)
