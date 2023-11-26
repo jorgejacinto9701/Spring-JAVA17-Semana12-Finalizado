@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.empresa.entidades.Opcion;
-import com.empresa.entidades.Pasatiempo;
 import com.empresa.entidades.Rol;
 import com.empresa.entidades.Usuario;
 
@@ -24,7 +23,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	
 	public abstract Usuario findByLogin(String login);
 	
-	@Query("Select r from Pasatiempo r, UsuarioHasPasatiempo u where r.idPasatiempo = u.pasatiempo.idPasatiempo and u.usuario.idUsuario = ?1 ")
-	public abstract List<Pasatiempo> traerPasatiempoDeUsuario(int idUsuario);
 	
 }
