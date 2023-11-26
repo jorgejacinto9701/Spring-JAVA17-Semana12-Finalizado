@@ -1,5 +1,6 @@
 package com.empresa.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Pageable;
@@ -17,5 +18,17 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 	@Modifying
 	@Query("update Producto x set x.stock = x.stock - ?2 where x.idProducto = ?1 ")
 	public abstract void actualizaStock(int idProducto, int cantidad);
+	
+	
+	@Query(value =  " select p.idProducto as 'idProducto', p.nombre as 'nombre', sum(bsp.cantidad) as 'cantidad'  "
+			+ "from boleta_has_producto bsp  "
+			+ "inner join producto p on bsp.idProducto = p.idProducto "
+			+ "inner join boleta b on b.idBoleta = bsp.idBoleta "
+			+ "where b.fecha >=  ?1 and b.fecha <= ?2 "
+			+ "group by p.idProducto, p.nombre "
+			+ "order by 3 desc " , nativeQuery = true)
+	
+	public abstract List<Object> listaReporteProducto(Date fechaDesde, Date fechaHasta);
+	
 	
 }

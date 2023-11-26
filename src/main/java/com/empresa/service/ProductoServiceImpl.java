@@ -1,5 +1,6 @@
 package com.empresa.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class ProductoServiceImpl implements ProductoService {
 	@Override
 	public List<Producto> listaProducto(String filtro, Pageable pageable) {
 		return repository.listaProducto(filtro, pageable);
+	}
+
+	@Override
+	public List<Object> listaReporteProducto(Date fechaDesde, Date fechaHasta) {
+		return repository.listaReporteProducto(fechaDesde, fechaHasta);
 	}
 	
 

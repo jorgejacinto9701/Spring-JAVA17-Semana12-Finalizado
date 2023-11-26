@@ -124,5 +124,6 @@ public class EnlaceController {
 	@GetMapping("/verAsignacionPasatiempo")
 	public String verAsignacionPasatiempo() {	return "intranetAsignacionPasatiempo";	}
 	
-	
+	@GetMapping("/verReporteProducto")
+	public String verReporteProducto() {	return "intranetReporteProducto";	}
 }
