@@ -16,7 +16,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
+		
 	@Override
 	public Usuario login(Usuario bean) {
 		return usuarioRepository.login(bean);

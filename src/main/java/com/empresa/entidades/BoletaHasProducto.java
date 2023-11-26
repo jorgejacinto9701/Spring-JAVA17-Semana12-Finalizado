@@ -19,11 +19,11 @@ public class BoletaHasProducto {
 	private double precio;
 	private int cantidad;
 
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name = "idBoleta", nullable = false, insertable = false, updatable = false)
 	private Boleta boleta;
 
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name = "idProducto", nullable = false, insertable = false, updatable = false)
 	private Producto producto;
 
