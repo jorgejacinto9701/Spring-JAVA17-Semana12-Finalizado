@@ -10,5 +10,5 @@ import com.empresa.entidades.Producto;
 public interface ProductoService {
 
 	public abstract List<Producto> listaProducto(String filtro, Pageable pageable);
-	public abstract List<Object> listaReporteProducto(Date fechaDesde, Date fechaHasta);
+	public abstract List<Object[]> listaReporte(Date fechaDesde, Date fechaHasta); 
 }

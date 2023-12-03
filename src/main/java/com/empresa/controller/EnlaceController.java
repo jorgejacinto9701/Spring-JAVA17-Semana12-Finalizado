@@ -127,3 +127,5 @@ public class EnlaceController {
 	@GetMapping("/verReporteProducto")
 	public String verReporteProducto() {	return "intranetReporteProducto";	}
 }
+
+

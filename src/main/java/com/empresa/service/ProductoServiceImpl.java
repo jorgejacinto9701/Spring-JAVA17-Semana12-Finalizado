@@ -22,8 +22,8 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public List<Object> listaReporteProducto(Date fechaDesde, Date fechaHasta) {
-		return repository.listaReporteProducto(fechaDesde, fechaHasta);
+	public List<Object[]> listaReporte(Date fechaDesde, Date fechaHasta) {
+		return repository.listaReporte(fechaDesde, fechaHasta);
 	}
 	
 
