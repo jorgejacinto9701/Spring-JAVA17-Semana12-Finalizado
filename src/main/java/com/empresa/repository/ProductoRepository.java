@@ -20,12 +20,14 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 	public abstract void actualizaStock(int idProducto, int cantidad);
 	
 	
-	@Query(value = "SELECT bshp.idProducto as idProducto, p.nombre as nombre,sum(cantidad) as cantidad "
+	@Query(value = "SELECT bshp.idProducto as idProducto, p.nombre as nombre, "
+			+ "	   bshp.precio as precio, sum(bshp.cantidad) as cantidad, "
+			+ "       sum(bshp.cantidad * bshp.precio) as monto "
 			+ "FROM boleta_has_producto bshp "
 			+ "inner join boleta b on b.idBoleta = bshp.idBoleta "
 			+ "inner join producto p on bshp.idProducto = p.idProducto "
 			+ "where b.fecha >= ?1 and b.fecha<= ?2 "
-			+ "group by bshp.idProducto,p.nombre "
-			+ "order by cantidad desc" , nativeQuery = true)
+			+ "group by bshp.idProducto, p.nombre, bshp.precio "
+			+ "order by cantidad desc;" , nativeQuery = true)
 	public abstract List<Object[]> listaReporte(Date fechaDesde, Date fechaHasta); 
 }

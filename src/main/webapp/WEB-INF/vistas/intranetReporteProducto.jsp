@@ -52,8 +52,10 @@
 					<thead>
 						<tr>
 							<th style="width: 10%">Código</th>
-							<th style="width: 75%">Nombre</th>
+							<th style="width: 45%">Nombre</th>
+							<th style="width: 15%">Precio</th>
 							<th style="width: 15%">#Compras</th>
+							<th style="width: 15%">Monto</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -87,7 +89,9 @@ function agregarGrilla(lista){
 			columns:[
 				{data: "idProducto"},
 				{data: "nombre"},
+				{data: "precio"},
 				{data: "cantidad"},
+				{data: "monto"},
 			]                                     
 	    });
 }

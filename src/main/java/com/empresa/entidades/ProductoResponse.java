@@ -9,6 +9,8 @@ public class ProductoResponse {
 
 	private int idProducto;
 	private String nombre;
+	private double precio;
 	private int cantidad;
+	private double monto;
 	
 }

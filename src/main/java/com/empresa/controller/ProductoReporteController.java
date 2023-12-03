@@ -30,8 +30,10 @@ public class ProductoReporteController {
 		for (Object[] array : lstProducto) {
 			ProductoResponse objReporteProducto = new ProductoResponse();
 			objReporteProducto.setIdProducto( (Integer)(array[0]));
-			objReporteProducto.setNombre( (String)(array[1]));
-			objReporteProducto.setCantidad( ((BigDecimal)(array[2])).intValue());
+			objReporteProducto.setNombre( (String)array[1] );
+			objReporteProducto.setPrecio( (Double)array[2] );
+			objReporteProducto.setCantidad( ((BigDecimal)(array[3])).intValue());
+			objReporteProducto.setMonto( (Double)array[4] );
 			lstSalida.add(objReporteProducto);
 		}
 		
