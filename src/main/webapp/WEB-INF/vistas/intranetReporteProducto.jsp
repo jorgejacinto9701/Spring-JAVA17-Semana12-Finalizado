@@ -25,7 +25,7 @@
 </head>
 <body>
 <jsp:include page="intranetCabecera.jsp" />
-<div class="container" style="margin-top: 4%"><h4>Asignación Pasatiempo</h4></div>
+<div class="container" style="margin-top: 4%"><h4>Reporte de Producto</h4></div>
 
 <form id="id_form" >
 	<div class="container">
